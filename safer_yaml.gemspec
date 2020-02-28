@@ -4,7 +4,7 @@ require 'safer_yaml/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'safer_yaml'
-  spec.version       = SaferYaml::VERSION
+  spec.version       = SaferYAML::VERSION
   spec.authors       = ['Shane Becker']
   spec.email         = ['veganstraightedge@gmail.com']
 
