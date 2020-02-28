@@ -1,4 +1,4 @@
-require "safer_yaml/version"
+require 'safer_yaml/version'
 
 module SaferYaml
   class Error < StandardError; end

@@ -4,12 +4,38 @@ require:
   - rubocop-performance
   - rubocop-rspec
 
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+# Good: foo_37
+# Bad: bar42
+# Exception: s3
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+# 👍👍🏻👍🏼👍🏽👍🏾👍🏿
+Style/AsciiComments:
+  Enabled: false
+
+# Don’t require top-level class documentation comment
+Style/Documentation:
+  Enabled: false
+
 Style/HashEachMethods:
   Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
 
 Style/HashTransformKeys:
   Enabled: true
 
 Style/HashTransformValues:
   Enabled: true
-
