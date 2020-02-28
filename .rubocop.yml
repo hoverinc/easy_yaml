@@ -25,6 +25,9 @@ Metrics/BlockLength:
 Naming/VariableNumber:
   EnforcedStyle: snake_case
 
+RSpec/NestedGroups:
+  Max: 4
+
 # 👍👍🏻👍🏼👍🏽👍🏾👍🏿
 Style/AsciiComments:
   Enabled: false

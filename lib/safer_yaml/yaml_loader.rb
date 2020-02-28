@@ -7,6 +7,7 @@ module SaferYAML
       @path                   = path
       @relative_to_rails_root = relative_to_rails_root
       @allow_aliases          = allow_aliases
+      @allow_erb              = allow_erb
     end
 
     def to_h
@@ -20,6 +21,8 @@ module SaferYAML
     end
 
     def erb_parsed_yaml
+      return yaml_file unless @allow_erb
+
       ERB.new(yaml_file).result
     end
 
