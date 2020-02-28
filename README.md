@@ -8,7 +8,7 @@ It makes some opinionated assumptions, each of which you can override.
 Add this line to your application's `Gemfile`:
 
 ```ruby
-gem 'safer_yaml'
+gem 'easy_yaml'
 ```
 
 And then execute from the command line:
@@ -20,7 +20,7 @@ bundle
 Or install it yourself as:
 
 ```sh
-gem install safer_yaml
+gem install easy_yaml
 ```
 
 ## Usage
@@ -98,7 +98,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/hoverinc/safer_yaml. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/hoverinc/easy_yaml. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -106,4 +106,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the EasyYAML project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hoverinc/safer_yaml/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the EasyYAML project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hoverinc/easy_yaml/blob/master/CODE_OF_CONDUCT.md).

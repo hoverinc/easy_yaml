@@ -1,4 +1,4 @@
-RSpec.describe SaferYAML::YAMLLoader do
+RSpec.describe EasyYAML::YAMLLoader do
   let(:yaml_examples_dir) { '../../spec/examples' }
 
   describe '#new' do

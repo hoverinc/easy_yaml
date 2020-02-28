@@ -1,11 +1,11 @@
-RSpec.describe SaferYAML do
+RSpec.describe EasyYAML do
   describe 'Administrivia' do
     it 'has a version number' do
-      expect(SaferYAML::VERSION).not_to be nil
+      expect(EasyYAML::VERSION).not_to be nil
     end
 
     it 'has the correct class name' do
-      expect(described_class.name).to eq('SaferYAML')
+      expect(described_class.name).to eq('EasyYAML')
     end
   end
 

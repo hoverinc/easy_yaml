@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'safer_yaml'
+require 'easy_yaml'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

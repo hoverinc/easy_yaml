@@ -1,7 +1,7 @@
 require 'yaml'
 require 'erb'
 
-module SaferYAML
+module EasyYAML
   class YAMLLoader
     def initialize path, allow_aliases: true, allow_erb: true, relative_to_rails_root: true
       @path                   = path
