@@ -1,6 +1,6 @@
-# SaferYAML
+# EasyYAML
 
-SaferYAML is a simple way to read and load YAML from a file.
+EasyYAML is a simple way to read and load YAML from a file.
 It makes some opinionated assumptions, each of which you can override.
 
 ## Installation
@@ -25,64 +25,64 @@ gem install safer_yaml
 
 ## Usage
 
-The simplest way to use SaferYAML is:
+The simplest way to use EasyYAML is:
 
 ```ruby
-SaferYAML.for('path/to/file.yml')
+EasyYAML.for('path/to/file.yml')
 ```
 
-SaferYAML makes a few opinionated assumptions.
+EasyYAML makes a few opinionated assumptions.
 You can override any of these with your own configuration.
 
-`SaferYAML.for` always returns a `Hash`.
+`EasyYAML.for` always returns a `Hash`.
 
 ### Required argument
 
 **`path`**
-`SaferYAML.for` requires a `path` argument as a `String`.
+`EasyYAML.for` requires a `path` argument as a `String`.
 
 Example:
 
 ```ruby
-SaferYAML.for('config/database.yml')
+EasyYAML.for 'config/database.yml'
 ```
 
 ### Optional arguments
 
 **`allow_aliases`** (defaults to `true`)
 
-By default, SaferYAML assumes that when you're loading a YAML file, you control and trust that YAML file and want to allow following and expanding any YAML aliases in the file.
+By default, EasyYAML assumes that when you're loading a YAML file, you control and trust that YAML file and want to allow following and expanding any YAML aliases in the file.
 
 If you don't want to allow aliases in the YAML, you can disable them by passing `allow_aliases: false`.
 
 Example:
 
 ```ruby
-SaferYAML.for('config/database.yml', allow_aliases: false)
+EasyYAML.for 'config/database.yml', allow_aliases: false
 ```
 
 **`allow_erb`** (defaults to `true`)
 
-By default, SaferYAML assumes that when you're loading a YAML file, you control and trust that YAML file and want to allow embedding ERB in the YAML and evaluating it.
+By default, EasyYAML assumes that when you're loading a YAML file, you control and trust that YAML file and want to allow embedding ERB in the YAML and evaluating it.
 
 If you don't want to evaluate ERB in the YAML, you can disable it by passing `allow_erb: false`.
 
 Example:
 
 ```ruby
-SaferYAML.for('config/database.yml', allow_erb: false)
+EasyYAML.for 'config/database.yml', allow_erb: false
 ```
 
 **`relative_to_rails_root`** (defaults to `true`)
 
-By default, SaferYAML assumes that when you're loading a YAML file that you're doing this from within a Rails app. SaferYAML then prefixes the `path` that you pass into `SaferYAML.for` with `Rails.root`. So, your `path` argument only needs to be a string of the path starting at the root of your Rails app.
+By default, EasyYAML assumes that when you're loading a YAML file that you're doing this from within a Rails app. EasyYAML then prefixes the `path` that you pass into `EasyYAML.for` with `Rails.root`. So, your `path` argument only needs to be a string of the path starting at the root of your Rails app.
 
-If you are running SaferYAML outside of a Rails app or if you don't want to load the YAML relative to the Rails app root, you can disable the path prefix by passing `relative_to_rails_root: false`.
+If you are running EasyYAML outside of a Rails app or if you don't want to load the YAML relative to the Rails app root, you can disable the path prefix by passing `relative_to_rails_root: false`.
 
 Example:
 
 ```ruby
-SaferYAML.for('../../../config/database.yml', relative_to_rails_root: false)
+EasyYAML.for '../../../config/database.yml', relative_to_rails_root: false
 ```
 
 ## Authors
@@ -106,4 +106,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the SaferYAML project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hoverinc/safer_yaml/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the EasyYAML project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/hoverinc/safer_yaml/blob/master/CODE_OF_CONDUCT.md).
