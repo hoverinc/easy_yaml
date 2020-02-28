@@ -3,11 +3,11 @@ require 'erb'
 
 module SaferYAML
   class YAMLLoader
-    def initialize path, relative_to_rails_root: true, allow_aliases: true, allow_erb: true
+    def initialize path, allow_aliases: true, allow_erb: true, relative_to_rails_root: true
       @path                   = path
-      @relative_to_rails_root = relative_to_rails_root
       @allow_aliases          = allow_aliases
       @allow_erb              = allow_erb
+      @relative_to_rails_root = relative_to_rails_root
     end
 
     def to_h
