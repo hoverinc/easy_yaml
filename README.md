@@ -1,16 +1,17 @@
 # SaferYAML
 
-TODO
+SaferYAML is a simple way to read and load YAML from a file.
+It makes some opinionated assumptions, each of which you can override.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
 gem 'safer_yaml'
 ```
 
-And then execute:
+And then execute from the command line:
 
 ```sh
 bundle
@@ -24,7 +25,65 @@ gem install safer_yaml
 
 ## Usage
 
-TODO: Write usage instructions here
+The simplest way to use SaferYAML is:
+
+```ruby
+SaferYAML.for('path/to/file.yml')
+```
+
+SaferYAML makes a few opinionated assumptions.
+You can override any of these with your own configuration.
+
+`SaferYAML.for` always returns a `Hash`.
+
+### Required argument
+
+**`path`**
+`SaferYAML.for` requires a `path` argument as a `String`.
+
+Example:
+
+```ruby
+SaferYAML.for('config/database.yml')
+```
+
+### Optional arguments
+
+**`allow_aliases`** (defaults to `true`)
+
+By default, SaferYAML assumes that when you're loading a YAML file, you control and trust that YAML file and want to allow following and expanding any YAML aliases in the file.
+
+If you don't want to allow aliases in the YAML, you can disable them by passing `allow_aliases: false`.
+
+Example:
+
+```ruby
+SaferYAML.for('config/database.yml', allow_aliases: false)
+```
+
+**`allow_erb`** (defaults to `true`)
+
+By default, SaferYAML assumes that when you're loading a YAML file, you control and trust that YAML file and want to allow embedding ERB in the YAML and evaluating it.
+
+If you don't want to evaluate ERB in the YAML, you can disable it by passing `allow_erb: false`.
+
+Example:
+
+```ruby
+SaferYAML.for('config/database.yml', allow_erb: false)
+```
+
+**`relative_to_rails_root`** (defaults to `true`)
+
+By default, SaferYAML assumes that when you're loading a YAML file that you're doing this from within a Rails app. SaferYAML then prefixes the `path` that you pass into `SaferYAML.for` with `Rails.root`. So, your `path` argument only needs to be a string of the path starting at the root of your Rails app.
+
+If you are running SaferYAML outside of a Rails app or if you don't want to load the YAML relative to the Rails app root, you can disable the path prefix by passing `relative_to_rails_root: false`.
+
+Example:
+
+```ruby
+SaferYAML.for('../../../config/database.yml', relative_to_rails_root: false)
+```
 
 ## Development
 
