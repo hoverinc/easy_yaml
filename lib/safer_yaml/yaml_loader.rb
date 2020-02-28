@@ -17,11 +17,15 @@ module SaferYAML
     private
 
     def normalized_path
-      @path.tr('\\', '/')
+      @path.tr('\\', '/').split('/')
+    end
+
+    def yaml_file_path
+      File.join normalized_path
     end
 
     def file_path
-      Pathname.new File.expand_path(normalized_path, __dir__)
+      Pathname.new File.expand_path(yaml_file_path, __dir__)
     end
 
     def yaml_file
