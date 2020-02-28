@@ -20,8 +20,12 @@ module SaferYAML
       @path.tr('\\', '/').split('/')
     end
 
+    def prefix_path
+      ::Rails.root if @relative_to_rails_root && defined?(::Rails)
+    end
+
     def yaml_file_path
-      File.join normalized_path
+      File.join [prefix_path, normalized_path].compact
     end
 
     def file_path
