@@ -35,5 +35,14 @@ RSpec.describe SaferYAML::YAMLLoader do
         expect(subject['name']).to eq 'Chicago Cubs'
       end
     end
+
+    context 'with YAML file with an hash' do
+      let(:array_yaml_example_path) { Pathname.new File.expand_path('../examples/hash.yml', __dir__) }
+
+      it 'reads value from YAML key' do
+        subject = described_class.new(array_yaml_example_path).to_h
+        expect(subject['team']['name']).to eq 'Cubs'
+      end
+    end
   end
 end
