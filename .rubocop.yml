@@ -40,3 +40,6 @@ Style/HashTransformKeys:
 
 Style/HashTransformValues:
   Enabled: true
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
