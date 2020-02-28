@@ -63,5 +63,12 @@ RSpec.describe SaferYAML::YAMLLoader do
         end
       end
     end
+
+    context 'with Windows style slashes' do
+      it 'works with slashes in both directions' do
+        subject = described_class.new('..\..\spec\examples\simple.yml').to_h
+        expect(subject['name']).to eq 'Chicago Cubs'
+      end
+    end
   end
 end

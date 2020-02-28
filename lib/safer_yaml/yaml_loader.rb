@@ -16,12 +16,16 @@ module SaferYAML
 
     private
 
+    def normalized_path
+      @path.tr('\\', '/')
+    end
+
     def file_path
-      Pathname.new File.expand_path(@path, __dir__)
+      Pathname.new File.expand_path(normalized_path, __dir__)
     end
 
     def yaml_file
-      File.read(file_path)
+      File.read file_path
     end
 
     def erb_parsed_yaml
