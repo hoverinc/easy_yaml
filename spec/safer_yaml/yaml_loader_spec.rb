@@ -20,4 +20,11 @@ RSpec.describe SaferYAML::YAMLLoader do
       expect(subject).to be_a described_class
     end
   end
+
+  describe '#to_h' do
+    it 'returns a hash' do
+      subject = described_class.new('examples/simple.yml').to_h
+      expect(subject).to be_a Hash
+    end
+  end
 end
