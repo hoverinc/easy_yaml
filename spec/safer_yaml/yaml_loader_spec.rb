@@ -22,9 +22,18 @@ RSpec.describe SaferYAML::YAMLLoader do
   end
 
   describe '#to_h' do
+    let(:simple_yaml_example_path) { Pathname.new File.expand_path('../examples/simple.yml', __dir__) }
+
     it 'returns a hash' do
-      subject = described_class.new('examples/simple.yml').to_h
+      subject = described_class.new(simple_yaml_example_path).to_h
       expect(subject).to be_a Hash
+    end
+
+    context 'with simple YAML file' do
+      it 'reads value from YAML key' do
+        subject = described_class.new(simple_yaml_example_path).to_h
+        expect(subject['name']).to eq 'Chicago Cubs'
+      end
     end
   end
 end

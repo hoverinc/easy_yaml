@@ -15,6 +15,10 @@ Layout/HashAlignment:
 Layout/LineLength:
   Max: 120
 
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
 # Good: foo_37
 # Bad: bar42
 # Exception: s3
