@@ -9,7 +9,10 @@ Gem::Specification.new do |spec|
   spec.email         = ['veganstraightedge@gmail.com']
 
   spec.summary       = 'A simple way to safely load a YAML file'
-  spec.description   = 'SaferYAML reads a file from a path and uses YAML.safe_load to safely load its contents and optionally works with Rails.root'
+  spec.description   = <<~DESCRIPTION.tr("\n", ' ')
+    SaferYAML reads a file from a path and uses YAML.safe_load to
+    safely load its contents and optionally works with Rails.root
+  DESCRIPTION
   spec.homepage      = 'https://github.com/hoverinc/safer_yaml'
   spec.license       = 'MIT'
 
