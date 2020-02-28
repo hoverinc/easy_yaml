@@ -34,6 +34,13 @@ RSpec.describe SaferYAML::YAMLLoader do
         subject = described_class.new("#{yaml_examples_dir}/simple.yml").to_h
         expect(subject['name']).to eq 'Chicago Cubs'
       end
+
+      context 'with YAML aliases disallowed' do
+        it 'works just the same' do
+          subject = described_class.new("#{yaml_examples_dir}/simple.yml", allow_aliases: false).to_h
+          expect(subject['name']).to eq 'Chicago Cubs'
+        end
+      end
     end
 
     context 'with YAML file with an hash' do
@@ -64,10 +71,23 @@ RSpec.describe SaferYAML::YAMLLoader do
       end
     end
 
-    context 'with Windows style slashes' do
-      it 'works with slashes in both directions' do
-        subject = described_class.new('..\..\spec\examples\simple.yml').to_h
-        expect(subject['name']).to eq 'Chicago Cubs'
+    context 'with YAML aliases' do
+      let(:aliases_in_yaml_example_path) { "#{yaml_examples_dir}/aliases.yml" }
+
+      context 'with aliases allowed' do
+        it 'uses YAML aliases' do
+          subject = described_class.new(aliases_in_yaml_example_path).to_h
+          combined_hash = { '1b' => 'Anthony Rizzo', '3b' => 'Kris Bryant' }
+          expect(subject['2016_cubs']).to include combined_hash
+        end
+      end
+
+      context 'with aliases disallowed' do
+        it 'does not use YAML aliases' do
+          # TODO: figure out the bad path test
+          # subject = described_class.new(aliases_in_yaml_example_path, allow_aliases: false).to_h
+          # expect(subject['2016_cubs']).to raise_error
+        end
       end
     end
   end

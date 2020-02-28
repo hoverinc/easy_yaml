@@ -1,0 +1,7 @@
+cubs: &cubs
+  1b: Anthony Rizzo
+
+2016_cubs:
+  <<: *cubs
+  3b: Kris Bryant
+
