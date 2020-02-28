@@ -28,23 +28,23 @@ gem install easy_yaml
 The simplest way to use EasyYAML is:
 
 ```ruby
-EasyYAML.for('path/to/file.yml')
+EasyYAML.load('path/to/file.yml')
 ```
 
 EasyYAML makes a few opinionated assumptions.
 You can override any of these with your own configuration.
 
-`EasyYAML.for` always returns a `Hash`.
+`EasyYAML.load` always returns a `Hash`.
 
 ### Required argument
 
 **`path`**
-`EasyYAML.for` requires a `path` argument as a `String`.
+`EasyYAML.load` requires a `path` argument as a `String`.
 
 Example:
 
 ```ruby
-EasyYAML.for 'config/database.yml'
+EasyYAML.load 'config/database.yml'
 ```
 
 ### Optional arguments
@@ -58,7 +58,7 @@ If you don't want to allow aliases in the YAML, you can disable them by passing 
 Example:
 
 ```ruby
-EasyYAML.for 'config/database.yml', allow_aliases: false
+EasyYAML.load 'config/database.yml', allow_aliases: false
 ```
 
 **`allow_erb`** (defaults to `true`)
@@ -70,19 +70,19 @@ If you don't want to evaluate ERB in the YAML, you can disable it by passing `al
 Example:
 
 ```ruby
-EasyYAML.for 'config/database.yml', allow_erb: false
+EasyYAML.load 'config/database.yml', allow_erb: false
 ```
 
 **`relative_to_rails_root`** (defaults to `true`)
 
-By default, EasyYAML assumes that when you're loading a YAML file that you're doing this from within a Rails app. EasyYAML then prefixes the `path` that you pass into `EasyYAML.for` with `Rails.root`. So, your `path` argument only needs to be a string of the path starting at the root of your Rails app.
+By default, EasyYAML assumes that when you're loading a YAML file that you're doing this from within a Rails app. EasyYAML then prefixes the `path` that you pass into `EasyYAML.load` with `Rails.root`. So, your `path` argument only needs to be a string of the path starting at the root of your Rails app.
 
 If you are running EasyYAML outside of a Rails app or if you don't want to load the YAML relative to the Rails app root, you can disable the path prefix by passing `relative_to_rails_root: false`.
 
 Example:
 
 ```ruby
-EasyYAML.for '../../../config/database.yml', relative_to_rails_root: false
+EasyYAML.load '../../../config/database.yml', relative_to_rails_root: false
 ```
 
 ## Authors
