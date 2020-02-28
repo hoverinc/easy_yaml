@@ -4,7 +4,7 @@ require 'erb'
 module SaferYAML
   class YAMLLoader
     def initialize path, relative_to_rails_root: true, allow_aliases: true, allow_erb: true
-      @path                   = path
+      @path                   = Pathname.new File.expand_path(path, __dir__)
       @relative_to_rails_root = relative_to_rails_root
       @allow_aliases          = allow_aliases
       @allow_erb              = allow_erb

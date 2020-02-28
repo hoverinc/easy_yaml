@@ -13,7 +13,7 @@ Layout/HashAlignment:
   EnforcedColonStyle: table
 
 Layout/LineLength:
-  Max: 120
+  Max: 125
 
 Metrics/BlockLength:
   Exclude:
