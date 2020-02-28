@@ -44,5 +44,15 @@ RSpec.describe SaferYAML::YAMLLoader do
         expect(subject['team']['name']).to eq 'Cubs'
       end
     end
+
+    context 'with ERB in the YAML file' do
+      let(:erb_in_yaml_example_path) { Pathname.new File.expand_path('../examples/erb.yml', __dir__) }
+      let(:ruby_version) { RUBY_VERSION }
+
+      it 'parses ERB inside YAML, then reads value from YAML' do
+        subject = described_class.new(erb_in_yaml_example_path).to_h
+        expect(subject['ruby']['version']).to eq ruby_version
+      end
+    end
   end
 end

@@ -3,7 +3,7 @@ require 'erb'
 
 module SaferYAML
   class YAMLLoader
-    def initialize path, relative_to_rails_root: true, allow_aliases: true
+    def initialize path, relative_to_rails_root: true, allow_aliases: true, allow_erb: true
       @path                   = path
       @relative_to_rails_root = relative_to_rails_root
       @allow_aliases          = allow_aliases
@@ -19,8 +19,12 @@ module SaferYAML
       File.read(@path)
     end
 
+    def erb_parsed_yaml
+      ERB.new(yaml_file).result
+    end
+
     def safe_load
-      YAML.safe_load(yaml_file, aliases: @allow_aliases)
+      YAML.safe_load(erb_parsed_yaml, aliases: @allow_aliases)
     end
   end
 end
