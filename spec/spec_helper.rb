@@ -1,4 +1,5 @@
 require 'bundler/setup'
+require 'byebug'
 require 'easy_yaml'
 
 RSpec.configure do |config|

@@ -1,4 +1,5 @@
 require 'yaml'
+require 'pathname'
 require 'erb'
 
 module EasyYAML
@@ -29,7 +30,7 @@ module EasyYAML
     end
 
     def file_path
-      Pathname.new File.expand_path(yaml_file_path, __dir__)
+      Pathname.new File.expand_path(yaml_file_path, Dir.pwd)
     end
 
     def yaml_file
