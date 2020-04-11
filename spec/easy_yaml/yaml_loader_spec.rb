@@ -1,6 +1,10 @@
 RSpec.describe EasyYAML::YAMLLoader do
   let(:yaml_examples_dir) { '../../spec/examples' }
 
+  before do
+    Dir.chdir(__dir__)
+  end
+
   describe '#new' do
     it 'requires a path argument' do
       subject = described_class.new("#{yaml_examples_dir}/simple.yml")
