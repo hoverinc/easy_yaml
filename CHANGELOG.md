@@ -1,5 +1,10 @@
 # Master
 
+## 0.2.1 / 2020-04-10
+
+- Fixes
+  - [#3](https://github.com/hoverinc/easy_yaml/pull/3) Appease Rubocop
+
 ## 0.2.0 / 2020-04-10
 
 - Fixes
