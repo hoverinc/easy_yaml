@@ -1,5 +1,11 @@
 # Master
 
+## 0.2.0 / 2020-04-10
+
+- Fixes
+  - [#2](https://github.com/hoverinc/easy_yaml/pull/2) Resolve paths relative to the current path, by [@jfahrer](https://github.com/jfahrer)
+    > This allows the gem to be used outside of Rails. Without this change relative paths to a yaml file are expanded to the path the gem is installed in.
+
 ## 0.1.0 / 2020-02-28
 
 - EasyYAML's Birthday!
