@@ -1,5 +1,11 @@
 # Master
 
+## 0.2.2 / 2021-06-29
+
+- Fixes
+  - [Security] Version bump rexml (CVE-2021-28965)
+  - Rubocop updates
+
 ## 0.2.1 / 2020-04-10
 
 - Fixes
