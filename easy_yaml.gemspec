@@ -3,6 +3,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'easy_yaml/version'
 
 Gem::Specification.new do |spec|
+  spec.required_ruby_version = '>= 2.6.0'
+
   spec.name          = 'easy_yaml'
   spec.version       = EasyYAML::VERSION
   spec.authors       = ['Shane Becker']
