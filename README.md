@@ -28,7 +28,7 @@ gem install easy_yaml
 The simplest way to use EasyYAML is:
 
 ```ruby
-EasyYAML.load('path/to/file.yml')
+EasyYAML.load 'path/to/file.yml'
 ```
 
 EasyYAML makes a few opinionated assumptions.
