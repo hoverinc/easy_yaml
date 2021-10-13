@@ -1,5 +1,10 @@
 # Master
 
+# Releases
+## 0.2.3 / 2021-10-12
+- Fixes
+  - Unpin and version bump all gem dependencies
+
 ## 0.2.2 / 2021-06-29
 
 - Fixes
