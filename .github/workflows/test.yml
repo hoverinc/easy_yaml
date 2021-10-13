@@ -8,13 +8,16 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v1
+        uses: actions/checkout@master
 
       - name: Set up Ruby
         uses: actions/setup-ruby@v1
 
-      - name: Build and test
+      - name: Install dependencies
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
+
+      - name: Run tests
+        run: |
           bundle exec rspec
