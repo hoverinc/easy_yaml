@@ -11,9 +11,3 @@
 # IgnoredMethods: refine
 Metrics/BlockLength:
   Max: 28
-
-# Offense count: 1
-# Configuration parameters: CheckIdentifiers, CheckConstants, CheckVariables, CheckStrings, CheckSymbols, CheckComments, CheckFilepaths, FlaggedTerms.
-Naming/InclusiveLanguage:
-  Exclude:
-    - 'easy_yaml.gemspec'

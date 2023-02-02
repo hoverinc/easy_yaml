@@ -1,7 +1,7 @@
 RSpec.describe EasyYAML do
   describe 'Administrivia' do
     it 'has a version number' do
-      expect(EasyYAML::VERSION).not_to be nil
+      expect(EasyYAML::VERSION).not_to be_nil
     end
 
     it 'has the correct class name' do
