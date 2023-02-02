@@ -16,13 +16,6 @@ Gemspec/DevelopmentDependencies:
     - 'easy_yaml.gemspec'
 
 # Offense count: 1
-# Configuration parameters: Severity, Include.
-# Include: **/*.gemspec
-Gemspec/RequiredRubyVersion:
-  Exclude:
-    - 'easy_yaml.gemspec'
-
-# Offense count: 1
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, AllowedMethods, AllowedPatterns, IgnoredMethods.
 # AllowedMethods: refine
 Metrics/BlockLength:
