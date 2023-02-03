@@ -1,6 +1,12 @@
 # Master
 
 # Releases
+## 0.3.0
+- Fixes
+  - Require Ruby >= 3.1.3
+  - Rubocop updates
+  - Update `BUNDLED WITH` from 2.2.17 to 2.4.6
+
 ## 0.2.3 / 2021-10-12
 - Fixes
   - Unpin and version bump all gem dependencies
