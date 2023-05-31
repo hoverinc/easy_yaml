@@ -1,23 +1,19 @@
-name: Tests
-
 on: [push]
 
+name: Tests
+
 jobs:
-  run:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@master
+        uses: actions/checkout@main
 
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
-
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3
+        uses: ruby/setup-ruby@master
+        with:
+          bundler-cache: true
 
       - name: Run tests
-        run: |
-          bundle exec rspec
+        run: bundle exec rspec
