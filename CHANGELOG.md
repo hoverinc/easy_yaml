@@ -1,6 +1,13 @@
 # Master
 
 # Releases
+
+## 0.4.0
+- Fixes
+  - Require Ruby >= 3.2.2
+  - Rubocop updates
+  - Update `BUNDLED WITH` from 2.4.6 to 2.4.13
+
 ## 0.3.0
 - Fixes
   - Require Ruby >= 3.1.3
