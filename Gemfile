@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'bundler'
-gem 'byebug'
 gem 'rake'
 gem 'rspec'
 gem 'rubocop'
